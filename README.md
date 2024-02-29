@@ -1,4 +1,5 @@
 <h1>Audio Steganography using Fast Fourier Transform.</h1>
+<p>The text is inserted in audio's frequency using the Koch method.</p>
 <h2>Usage</h2>
 <a>In view/Main.kt<color="#6420AA"/a>
 <pre>
@@ -13,4 +14,6 @@
   </code>
 </pre>
 
-<b>Output</b>
+<p>Output</p>
+
+![alt text](https://github.com/jkestwill/audioSteganographyFFT/blob/master/zxc.png?raw=true)
