@@ -2,7 +2,6 @@ package view
 
 import presenter.MainPresenter
 import repository.WavFileRepositoryImpl
-import wav.WavFile
 
 class Main() : View {
     private val wavFileRepository = WavFileRepositoryImpl()

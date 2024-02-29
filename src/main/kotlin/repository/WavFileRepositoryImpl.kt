@@ -1,8 +1,6 @@
 package repository
 
-import model.Wave
 import wav.WavFile
-
 import java.io.File
 
 class WavFileRepositoryImpl(

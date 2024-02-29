@@ -1,7 +1,6 @@
 package presenter
 
 import repository.WavFileRepository
-import repository.WavFileRepositoryImpl
 import steganography.Koch
 import view.View
 
