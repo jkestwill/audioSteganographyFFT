@@ -5,7 +5,6 @@ import kotlin.math.*
 
 class Complex(var re: Double, var im: Double):Any() {
 
-
     operator fun plus(c: Complex): Complex {
         return Complex(re + c.re, im + c.im)
     }
@@ -66,15 +65,6 @@ class Complex(var re: Double, var im: Double):Any() {
         else if(re<0 && im<0){
             arg=-Math.PI+ atan(im/re)
         }
-//        else if(re>0 && im<0){
-//            arg=2* PI- atan(im/re)
-//        }
-//        else if(re==0.0 && im>0.0){
-//            arg=Math.PI/2
-//        }
-//        else if (re==0.0 && im<0.0){
-//            arg=-Math.PI/2
-//        }
         return arg
     }
 

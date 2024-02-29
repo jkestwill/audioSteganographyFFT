@@ -1,11 +1,14 @@
 package repository
 
+import model.Wave
 import wav.WavFile
 
 import java.io.File
 
-class WavFileRepositoryImpl : WavFileRepository {
-    var wave:WavFile?=null
+class WavFileRepositoryImpl(
+
+) : WavFileRepository {
+    private var wave:WavFile? = null
 
     override fun readWave(path: String):Array<DoubleArray> {
        wave= WavFile.openWavFile(File(path))
@@ -13,17 +16,17 @@ class WavFileRepositoryImpl : WavFileRepository {
         val data=Array<DoubleArray>(2){
             DoubleArray(wave!!.numFrames.toInt())
         }
-
-        wave!!.readFrames(data,wave!!.numFrames.toInt())
-        println(wave!!.framesRemaining)
+        wave?.readFrames(data, wave!!.numFrames.toInt())
       return data
     }
 
     override fun writeBytes( path: String, array:Array<DoubleArray>) {
-       val new= WavFile.newWavFile(File(path),wave!!.numChannels,wave!!.numFrames,wave!!.validBits,wave!!.sampleRate)
-        new.writeFrames(array,0,wave!!.numFrames.toInt())
-        new.close()
-
+        val file = File(path)
+        wave?.let {
+            val new = WavFile.newWavFile(file, it.numChannels, it.numFrames, it.validBits, it.sampleRate)
+            new.writeFrames(array, 0, it.numFrames.toInt())
+            new.close()
+        }
     }
 
 }

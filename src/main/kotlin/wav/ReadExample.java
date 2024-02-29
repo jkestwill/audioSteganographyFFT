@@ -9,7 +9,7 @@ public class ReadExample
 		try
 		{
 			// Open the wav file specified as the first argument
-			WavFile wavFile = WavFile.openWavFile(new File("D:/curch/penis.wav"));
+			WavFile wavFile = WavFile.openWavFile(new File("D:/curch/sound.wav"));
 
 			// Display information about the wav file
 			wavFile.display();

@@ -22,7 +22,7 @@ fun String.BinaryToString(): String {
             start += 9
             end += 9
         } catch (e: Exception) {
-
+            println(e)
         }
     }
     return stringBuilder.toString()

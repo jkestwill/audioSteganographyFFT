@@ -4,5 +4,5 @@ interface Steganography {
 
     fun encode()
 
-    fun decode()
+    fun decode(textSize:Int)
 }

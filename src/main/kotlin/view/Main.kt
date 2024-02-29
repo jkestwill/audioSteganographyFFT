@@ -1,33 +1,36 @@
 package view
 
 import presenter.MainPresenter
+import repository.WavFileRepositoryImpl
+import wav.WavFile
 
-class Main : View {
-
-    private val mainPresenter = MainPresenter(this)
+class Main() : View {
+    private val wavFileRepository = WavFileRepositoryImpl()
+    private val mainPresenter = MainPresenter(this, wavFileRepository = wavFileRepository)
     override fun show(message: Any) {
         println(message)
     }
 
 
     override fun onCreate() {
-      filter()
-
+      new()
 
     }
 
     fun new(){
-        val orign ="D:/Downloads/pirat.wav"
+        val orign ="C:\\Users\\admin\\Downloads\\serega.wav"
         mainPresenter.readFile(orign )
         mainPresenter.encode("I hate steganography")
         mainPresenter.decode()
-        mainPresenter.writeBytes("D:/curch/piratCoded.wav")
+        mainPresenter.writeBytes("C:\\Users\\admin\\Downloads\\piratCoded.wav")
     }
 
+/**
+ * Decode file modified by audio filters
+ * **/
     fun filter(){
         mainPresenter.readFile("D:/curch/piratCode.wav" )
         mainPresenter.decode()
-
     }
 
 // фвч 001010011101111001001001001000100010

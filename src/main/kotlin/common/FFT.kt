@@ -4,7 +4,7 @@ import model.Complex
 import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.sin
-
+/**Fast Fourier Transform**/
 object FFT {
 
     fun fft(x: Array<Complex>, isFft: Boolean): Array<Complex> {
