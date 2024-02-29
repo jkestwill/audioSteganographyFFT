@@ -1,2 +1,8 @@
+
+target/
+build/
+out
 .idea
-/out
+*.ipr
+*.iws
+*.iml
